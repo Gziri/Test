@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US; ka-GE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta robots="noindex">
+    <meta name="robots" content="noindex" />
+    <meta description="My First Website">
+    <title>First Website</title>
+    <style>
+        body{background-color: rgb(126, 196, 46); font-family: Arial, Helvetica, sans-serif; font-size: 16px}
+        .header1color{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(255, 228, 74) }
+        .dropbtn{
+            background-color: indigo;
+            color: white;
+            padding:1em;
+            font-size: 1em;
+            border:none;
+            cursor:pointer;
+        }
+        .dropbtn:hover,.dropbtn.focus{
+            background-color: indianred
+        }
+        .dropdown-content {
+            display: none;
+            position:absolute;
+            background-color: gray;
+            width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+        }
+        .dropdown-content a {
+            color:black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover{
+            background-color: #ddd;
+        }
+        .show{display: block}
+
+        
+    </style>
+    
+</head>
+<body>
+    <h1 align="center" class="header1color">Welcome to the Jungle</h1>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content"></div>
+            <a href="./Main_Page.html">Main</a>
+            <a href="./About_Page.html">About</a>
+            <a href="./More_Page.html">More</a>
+    </div>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show")
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')){
+                var dropdowns = document.getElementsbyclassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')){
+                        openDropdown.classlist.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+    <div align="center" title="top">
+        <img src="./images/jungle.gif" alt="Jungle Monkey" width="200px" height="100px" >
+    </div>
+</body>
+</html>
